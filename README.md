@@ -22,36 +22,8 @@ This is my personal portfolio website built with React.js and Tailwind CSS. It s
 - React Scroll (Smooth navigation)
 - Git & GitHub for version control
 
-## 📸 Screenshots
 
-| Section | Preview |
-|--------|---------|
-| Hero   | ![Hero](./public/Image/ai.jpg) |
-| About  | ![About](./public/Image/Profile.jpg) |
-| Contact | ![Map](https://www.google.com/maps/place/Jalgaon,+Maharashtra) |
 
-## 🧾 Project Structure
-
-Nilesh-Port/
-├── public/
-│ ├── Image/ (profile & background images)
-├── src/
-│ ├── components/
-│ │ ├── Navbar.jsx
-│ │ ├── Hero.jsx
-│ │ ├── About.jsx
-│ │ ├── Skills.jsx
-│ │ ├── Projects.jsx
-│ │ ├── Contact.jsx
-│ │ └── Footer.jsx
-│ └── App.jsx
-├── tailwind.config.js
-├── package.json
-└── README.md
-
-bash
-Copy
-Edit
 
 ## 📬 Contact
 
