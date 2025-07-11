@@ -1,12 +1,61 @@
-# React + Vite
+# 🧑‍💻 Nilesh Rathod – Portfolio Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is my personal portfolio website built with React.js and Tailwind CSS. It showcases my projects, skills, education, and contact details in a modern, responsive layout.
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 🔹 Responsive design for all devices
+- 🔹 Animated hero section with dynamic typing
+- 🔹 About section with education and personal information
+- 🔹 Technical Skills, Soft Skills, and Interests beautifully categorized
+- 🔹 Project cards with descriptions
+- 🔹 Contact form with integrated Google Maps location
+- 🔹 Social media links and animated footer
 
-## Expanding the ESLint configuration
+## 🛠️ Technologies Used
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- React.js ⚛️
+- Tailwind CSS 🌬️
+- React Typed (Animated typing effect)
+- React Icons (FontAwesome, Feather, etc.)
+- Framer Motion (Animations)
+- React Scroll (Smooth navigation)
+- Git & GitHub for version control
+
+## 📸 Screenshots
+
+| Section | Preview |
+|--------|---------|
+| Hero   | ![Hero](./public/Image/ai.jpg) |
+| About  | ![About](./public/Image/Profile.jpg) |
+| Contact | ![Map](https://www.google.com/maps/place/Jalgaon,+Maharashtra) |
+
+## 🧾 Project Structure
+
+Nilesh-Port/
+├── public/
+│ ├── Image/ (profile & background images)
+├── src/
+│ ├── components/
+│ │ ├── Navbar.jsx
+│ │ ├── Hero.jsx
+│ │ ├── About.jsx
+│ │ ├── Skills.jsx
+│ │ ├── Projects.jsx
+│ │ ├── Contact.jsx
+│ │ └── Footer.jsx
+│ └── App.jsx
+├── tailwind.config.js
+├── package.json
+└── README.md
+
+bash
+Copy
+Edit
+
+## 📬 Contact
+
+- Email: rathodnilesh7154@gmail.com
+- Phone: +91 8530019387
+- LinkedIn: [linkedin.com/in/rathod-nilesh7154](https://linkedin.com/in/rathod-nilesh7154)
+- GitHub: [github.com/nilesh7154](https://github.com/nilesh7154)
