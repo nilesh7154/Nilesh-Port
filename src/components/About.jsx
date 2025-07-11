@@ -13,31 +13,33 @@ export default function About() {
 
       <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-start">
         <div className="flex flex-col items-center justify-start text-center mt-10 md:mt-0 animate-fadeInUp order-1 md:order-2">
-          <div className="transition-all duration-500 transform hover:rotate-[-1deg] hover:translate-x-1 hover:translate-y-1 hover:shadow-[12px_12px_15px_rgba(0,0,0,0.5)]">
-            <img
-              src="/Image/Profile.jpg"
-              alt="Nilesh Rathod"
-              className="w-80 h-[400px] object-cover  shadow-lg"
-            />
-          </div>
+  <button
+    className="transition-all duration-500 transform focus:scale-105 focus:rotate-[-2deg] focus:shadow-[12px_12px_15px_rgba(0,0,0,0.5)] hover:scale-105 hover:rotate-[-1deg] hover:translate-x-1 hover:translate-y-1 hover:shadow-[12px_12px_15px_rgba(0,0,0,0.5)] outline-none "
+  >
+    <img
+      src="/Image/Profile.jpg"
+      alt="Nilesh Rathod"
+      className="w-80 h-[400px] object-cover shadow-lg "
+    />
+  </button>
 
-          <p className="mt-6 text-2xl font-semibold text-[#bb05b5] tracking-wide font-serif drop-shadow-md">
-            Frontend & Full Stack Developer
-          </p>
-          <p className="italic text-sm text-gray-600 mt-1">
-            Passionate CSE student building responsive full-stack web apps with
-            React, Tailwind CSS, and modern tools.
-          </p>
+  <p className="mt-6 text-2xl font-semibold text-[#bb05b5] tracking-wide font-serif drop-shadow-md">
+    Frontend & Full Stack Developer
+  </p>
+  <p className="italic text-sm text-gray-600 mt-1">
+    Passionate CSE student building responsive full-stack web apps with React, Tailwind CSS, and modern tools.
+  </p>
 
-          <a
-            href="/Image/Nilesh_Rathod_Resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-6 inline-block bg-[#0563bb] hover:bg-[#044a91] text-white font-semibold px-6 py-2 rounded-full shadow-lg transition duration-300"
-          >
-            📄 View Resume
-          </a>
-        </div>
+  <a
+    href="/Image/Nilesh_Rathod_Resume.pdf"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="mt-6 inline-block bg-[#0563bb] hover:bg-[#044a91] text-white font-semibold px-6 py-2 rounded-full shadow-lg transition duration-300"
+  >
+    📄 View Resume
+  </a>
+</div>
+
 
         <div className="text-gray-800 animate-fadeIn md:order-1 order-2">
           <p className="text-base leading-relaxed mb-4">

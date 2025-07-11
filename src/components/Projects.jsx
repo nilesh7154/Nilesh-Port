@@ -14,7 +14,7 @@ export default function Projects() {
       description:
         "A desktop application for managing tour packages, user login, and bookings. Built with Java, NetBeans, and MySQL.",
       tech: ["Java", "NetBeans", "MySQL", "Java(Swing,AWT)"],
-      github: "https://github.com/nilesh7154/Travel-and-Tourism",
+      github: "https://github.com/nilesh7154/TTMS",
     },
     {
       title: "Snake Game",
@@ -28,7 +28,7 @@ export default function Projects() {
       description:
         "Personal portfolio built with React and TailwindCSS to showcase projects, skills, and contact details.",
       tech: ["React.js", "Tailwind CSS"],
-      github: "https://github.com/nilesh7154/Portfolio",
+      github: "https://github.com/nilesh7154/My-Portfolio",
     },
   ];
 

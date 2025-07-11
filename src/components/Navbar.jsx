@@ -38,23 +38,18 @@ const socialLinks = [
     label: "LinkedIn",
   },
   {
-    href: "https://www.instagram.com/your_instagram_handle",
+    href: "https://www.instagram.com/niluu_.3",
     icon: <FaInstagram />,
     color: "hover:text-[#E1306C]",
     label: "Instagram",
   },
   {
-    href: "https://www.facebook.com/your_facebook_profile",
+    href: "https://www.facebook.com/nilesh.rathod.997408",
     icon: <FaFacebook />,
     color: "hover:text-[#1877F2]",
     label: "Facebook",
   },
-  {
-    href: "https://twitter.com/your_twitter_handle",
-    icon: <FaTwitter />,
-    color: "hover:text-[#1DA1F2]",
-    label: "Twitter",
-  },
+ 
   {
     href: "https://wa.me/918530019387",
     icon: <FaWhatsapp />,

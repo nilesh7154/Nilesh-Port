@@ -5,6 +5,7 @@ import {
   FaInstagram,
   FaFacebook,
   FaWhatsapp,
+  FaTelegramPlane,
 } from "react-icons/fa";
 
 export default function Footer() {
@@ -43,7 +44,7 @@ export default function Footer() {
             <FaLinkedin />
           </a>
           <a
-            href="https://www.instagram.com/your_instagram_handle"
+            href="https://www.instagram.com/niluu_.03"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-[#E1306C] transition duration-300"
@@ -52,7 +53,7 @@ export default function Footer() {
             <FaInstagram />
           </a>
           <a
-            href="https://www.facebook.com/your_facebook_profile"
+            href="https://www.facebook.com/nilesh.rathod.997408"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-[#1877F2] transition duration-300"
@@ -69,6 +70,7 @@ export default function Footer() {
           >
             <FaWhatsapp />
           </a>
+         
         </div>
       </div>
     </motion.footer>
