@@ -1,3 +1,5 @@
+import ReactGA from 'react-ga4';
+import { useEffect } from 'react';
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
@@ -7,6 +9,10 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
 export default function App() {
+  useEffect(() => {
+    ReactGA.initialize(TRACKING_ID);
+    ReactGA.send("pageview");
+  }, []);
   return (
     <div className="bg-white text-gray-800">
       <Navbar />
