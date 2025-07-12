@@ -1,5 +1,5 @@
 import ReactGA from 'react-ga4';
-import { useEffect } from 'react';
+import React, { useEffect } from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
@@ -9,14 +9,14 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
 export default function App() {
- const TRACKING_ID = import.meta.env.VITE_GA_ID;
+ const TRACKING_ID = import.meta.env.VITE_GA_ID; // ✅ Load from .env
 
   useEffect(() => {
     if (TRACKING_ID) {
       ReactGA.initialize(TRACKING_ID);
       ReactGA.send("pageview");
     } else {
-      console.warn("Google Analytics tracking ID is missing");
+      console.warn("❌ Google Analytics Tracking ID is missing!");
     }
   }, []);
   return (
