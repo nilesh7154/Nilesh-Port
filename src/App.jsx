@@ -9,9 +9,15 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
 export default function App() {
+ const TRACKING_ID = import.meta.env.VITE_GA_ID;
+
   useEffect(() => {
-    ReactGA.initialize(TRACKING_ID);
-    ReactGA.send("pageview");
+    if (TRACKING_ID) {
+      ReactGA.initialize(TRACKING_ID);
+      ReactGA.send("pageview");
+    } else {
+      console.warn("Google Analytics tracking ID is missing");
+    }
   }, []);
   return (
     <div className="bg-white text-gray-800">
