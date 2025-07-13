@@ -5,7 +5,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="scroll-mt-20 pt-24 pb-24 bg-gradient-to-b from-white to-gray-100"
+      className="scroll-mt-0 pt-24 pb-24 bg-gradient-to-b from-white to-gray-100"
     >
       <h2 className="text-4xl font-bold text-black mb-8 tracking-wide text-center underline decoration-[#0563bb] underline-offset-8">
         About Me
@@ -73,7 +73,7 @@ export default function About() {
             </div>
           </div>
 
-          <ul className="grid md:grid-cols-2 gap-6 text-sm text-gray-700">
+          <ul className="grid md:grid-cols-3 gap-6 text-sm text-gray-700">
             <li className="bg-white p-4 rounded shadow">
               <strong className="text-[#0563bb]">📍 Location:</strong>
               <br />
@@ -105,7 +105,8 @@ export default function About() {
                 href="mailto:rathodnilesh7154@gmail.com"
                 className="text-blue-600 hover:underline block mt-1"
               >
-                rathodnilesh7154@gmail.com
+                rathodnilesh7154<br/>
+                @gmail.com
               </a>
             </li>
             <li className="bg-white p-4 rounded shadow">
@@ -128,7 +129,7 @@ export default function About() {
                 rel="noreferrer"
                 className="text-blue-600 hover:underline block mt-1"
               >
-                github.com/nilesh7154
+                Github🔗
               </a>
             </li>
             <li className="bg-white p-4 rounded shadow">
@@ -141,7 +142,7 @@ export default function About() {
                 rel="noreferrer"
                 className="text-blue-600 hover:underline block mt-1"
               >
-                linkedin.com/in/rathod-nilesh7154
+                Linkedin🔗
               </a>
             </li>
           </ul>

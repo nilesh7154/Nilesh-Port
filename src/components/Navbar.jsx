@@ -11,7 +11,6 @@ import {
   FaLinkedin,
   FaInstagram,
   FaFacebook,
-  FaTwitter,
   FaWhatsapp,
 } from "react-icons/fa";
 import { Link } from "react-scroll";

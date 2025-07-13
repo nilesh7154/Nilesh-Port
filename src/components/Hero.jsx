@@ -40,7 +40,7 @@ export default function Hero() {
     <section
       id="home"
       ref={sectionRef}
-      className="relative h-screen bg-cover bg-center text-white px-8 transition-all duration-700 ease-in-out"
+      className="relative h-screen bg-cover bg-center text-white px-8 transition-all duration-7 ease-in-out"
       style={{
         backgroundImage: `url(${backgroundImage})`,
       }}
