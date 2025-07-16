@@ -73,7 +73,7 @@ export default function About() {
             </div>
           </div>
 
-          <ul className="grid md:grid-cols-3 gap-6 text-sm text-gray-700">
+          <ul className="grid grid-cols-2 md:grid-cols-2 gap-6 text-sm text-gray-700">
             <li className="bg-white p-4 rounded shadow">
               <strong className="text-[#0563bb]">📍 Location:</strong>
               <br />
@@ -105,8 +105,7 @@ export default function About() {
                 href="mailto:rathodnilesh7154@gmail.com"
                 className="text-blue-600 hover:underline block mt-1"
               >
-                rathodnilesh7154<br/>
-                @gmail.com
+                rathodnilesh7154@gmail.com
               </a>
             </li>
             <li className="bg-white p-4 rounded shadow">
