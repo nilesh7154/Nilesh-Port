@@ -11,21 +11,33 @@ export default function Skills() {
 
   const frameworks = [
     { name: "React.js", desc: "Component-based architecture, hooks, JSX." },
-   
-    { name: "Tailwind CSS", desc: "Utility-first CSS framework for custom UIs." },
+
+    {
+      name: "Tailwind CSS",
+      desc: "Utility-first CSS framework for custom UIs.",
+    },
   ];
 
   const libraries = [
-    { name: "Redux", desc: "State management for React using actions and reducers." },
+    {
+      name: "Redux",
+      desc: "State management for React using actions and reducers.",
+    },
     { name: "jQuery", desc: "DOM manipulation and event handling." },
     { name: "Axios", desc: "Promise-based HTTP client for API integration." },
-    { name: "JSON", desc: "Data format for API communication and configuration." },
+    {
+      name: "JSON",
+      desc: "Data format for API communication and configuration.",
+    },
   ];
 
   const tools = [
     { name: "Git & GitHub", desc: "Version control and remote collaboration." },
     { name: "Postman", desc: "API testing and development environment." },
-    { name: "NPM", desc: "Package manager for JavaScript libraries and tools." },
+    {
+      name: "NPM",
+      desc: "Package manager for JavaScript libraries and tools.",
+    },
   ];
 
   const softSkills = [
@@ -55,18 +67,21 @@ export default function Skills() {
         </h2>
 
         <p className="italic text-gray-600 mb-12 text-center text-sm md:text-base">
-          Skilled in front-end and full-stack development using modern frameworks, libraries, and tools. Passionate about clean code, communication, and creative learning.
+          Skilled in front-end and full-stack development using modern
+          frameworks, libraries, and tools. Passionate about clean code,
+          communication, and creative learning.
         </p>
 
-        {/* 🧠 Technical Skills */}
         <div className="grid md:grid-cols-2 gap-12 mb-16">
-          <SkillHoverBlock title="💻 Programming Languages" skills={languages} />
+          <SkillHoverBlock
+            title="💻 Programming Languages"
+            skills={languages}
+          />
           <SkillHoverBlock title="📦 Libraries" skills={libraries} />
           <SkillHoverBlock title="🛠️ Tools & Technologies" skills={tools} />
           <SkillHoverBlock title="📚 Frameworks" skills={frameworks} />
         </div>
 
-        {/* 🤝 Soft Skills */}
         <SkillGrid title="🤝 Soft Skills" items={softSkills} />
 
         {/* 🎯 Interests */}
@@ -76,12 +91,11 @@ export default function Skills() {
   );
 }
 
-// Sub-component: SkillHoverBlock with mobile-friendly hover/tap support
 function SkillHoverBlock({ title, skills }) {
   const [activeIndex, setActiveIndex] = useState(null);
 
   const handleClick = (index) => {
-    setActiveIndex(prev => prev === index ? null : index);
+    setActiveIndex((prev) => (prev === index ? null : index));
   };
 
   return (
@@ -96,10 +110,16 @@ function SkillHoverBlock({ title, skills }) {
             className="group bg-white px-3 py-2 rounded-md border border-gray-200 shadow-sm text-center font-medium text-gray-800 hover:shadow transition cursor-pointer"
             onClick={() => handleClick(i)}
           >
-            <div className="text-sm font-semibold text-[#333]">{skill.name}</div>
-            <div className={`text-xs text-gray-600 mt-1 transition-opacity duration-300 ${
-              activeIndex === i ? "opacity-100" : "opacity-0 group-hover:opacity-100"
-            }`}>
+            <div className="text-sm font-semibold text-[#333]">
+              {skill.name}
+            </div>
+            <div
+              className={`text-xs text-gray-600 mt-1 transition-opacity duration-300 ${
+                activeIndex === i
+                  ? "opacity-100"
+                  : "opacity-0 group-hover:opacity-100"
+              }`}
+            >
               {skill.desc}
             </div>
           </div>
@@ -109,7 +129,7 @@ function SkillHoverBlock({ title, skills }) {
   );
 }
 
-// Sub-component: SkillGrid for soft skills and interests
+
 function SkillGrid({ title, items }) {
   return (
     <div className="mb-12">
