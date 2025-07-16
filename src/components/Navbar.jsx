@@ -31,7 +31,7 @@ const socialLinks = [
     label: "GitHub",
   },
   {
-    href: "https://www.linkedin.com/in/rathod-nilesh7154/",
+    href: "https://www.linkedin.com/in/rathod-nilesh7154",
     icon: <FaLinkedin />,
     color: "hover:text-[#0A66C2]",
     label: "LinkedIn",
