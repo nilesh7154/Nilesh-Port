@@ -73,7 +73,7 @@ export default function About() {
             </div>
           </div>
 
-          <ul className="grid grid-cols-2 md:grid-cols-2 gap-6 text-sm text-gray-700">
+          <ul className="grid  md:grid-cols-2 gap-6 text-sm text-gray-700">
             <li className="bg-white p-4 rounded shadow">
               <strong className="text-[#0563bb]">📍 Location:</strong>
               <br />
