@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { ReactTyped } from "react-typed";
+import {ReactTyped} from "react-typed";
 
 const images = [
   "/Image/ai.jpg",
@@ -13,26 +13,27 @@ const images = [
 export default function Hero() {
   const sectionRef = useRef(null);
   const [backgroundImage, setBackgroundImage] = useState(images[0]);
+  const [fade, setFade] = useState(true);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          const nextImage = images[Math.floor(Math.random() * images.length)];
-          setBackgroundImage(nextImage);
+          setFade(false);
+          setTimeout(() => {
+            const nextImage = images[Math.floor(Math.random() * images.length)];
+            setBackgroundImage(nextImage);
+            setFade(true);
+          }, 500);
         }
       },
       { threshold: 0.6 }
     );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
+    if (sectionRef.current) observer.observe(sectionRef.current);
 
     return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
+      if (sectionRef.current) observer.unobserve(sectionRef.current);
     };
   }, []);
 
@@ -40,20 +41,19 @@ export default function Hero() {
     <section
       id="home"
       ref={sectionRef}
-      className="relative h-screen bg-cover bg-center text-white px-8 transition-all duration-700 ease-in-out"
-      style={{
-        backgroundImage: `url(${backgroundImage})`,
-      }}
+      className={`relative h-screen bg-cover bg-center text-white px-8 transition-opacity duration-500 ease-in-out ${
+        fade ? "opacity-100" : "opacity-0"
+      }`}
+      style={{ backgroundImage: `url(${backgroundImage})` }}
     >
       <div className="absolute bottom-10 left-10 max-w-2xl space-y-2 leading-tight">
-        <h1 className="text-5xl md:text-6xl font-extrabold text-white drop-shadow-[2px_2px_6px_rgba(0,0,0,0.8)]">
+        <h1 className="text-5xl md:text-6xl font-extrabold drop-shadow-[2px_2px_6px_rgba(0,0,0,0.8)]">
           Nilesh Rathod
         </h1>
-
-        <h2 className="text-2xl md:text-3xl font-medium text-white drop-shadow-[1px_1px_5px_rgba(0,0,0,0.7)]">
+        <h2 className="text-2xl md:text-3xl font-medium drop-shadow-[1px_1px_5px_rgba(0,0,0,0.7)]">
           I'm a{" "}
           <span className="inline-block relative min-w-[300px]">
-            <span className=" border-b-4 border-red-500 inline-block text-transparent bg-clip-text bg-gradient-to-r from-[#f43f5e] via-[#8b5cf6] to-[#06b6d4] drop-shadow-[1px_1px_4px_rgba(0,0,0,0.6)]">
+            <span className="border-b-4 border-red-500 inline-block text-transparent bg-clip-text bg-gradient-to-r from-[#f43f5e] via-[#8b5cf6] to-[#06b6d4] drop-shadow-[1px_1px_4px_rgba(0,0,0,0.6)]">
               <ReactTyped
                 strings={[
                   "Full Stack Web Developer",

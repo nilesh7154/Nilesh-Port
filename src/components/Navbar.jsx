@@ -31,7 +31,7 @@ const socialLinks = [
     label: "GitHub",
   },
   {
-    href: "https://www.linkedin.com/in/rathod-nilesh7154?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    href: "https://www.linkedin.com/in/rathod-nilesh7154",
     icon: <FaLinkedin />,
     color: "hover:text-[#0A66C2]",
     label: "LinkedIn",
@@ -47,9 +47,7 @@ const socialLinks = [
     icon: <FaFacebook />,
     color: "hover:text-[#1877F2]",
     label: "Facebook",
-  },
- 
-  {
+  }, {
     href: "https://wa.me/918530019387",
     icon: <FaWhatsapp />,
     color: "hover:text-[#25D366]",
@@ -62,18 +60,28 @@ export default function Navbar() {
 
   return (
     <>
-      <aside className="hidden md:fixed md:top-0 md:left-0 md:h-full md:w-64 md:bg-gradient-to-b md:from-[#003973] md:to-[#e5e5be] md:shadow-lg md:flex md:flex-col md:justify-between md:py-10 md:z-50 md:rounded-md">
-        <div className="text-center px-4 text-white">
+      {/* Desktop Sidebar */}
+      <aside
+        className="
+          hidden md:fixed md:top-0 md:left-0 md:h-full md:w-64
+          bg-gradient-to-b from-gray-900 via-gray-800 to-black
+          md:shadow-xl md:flex md:flex-col md:justify-between md:py-10 md:z-50 md:rounded-r-lg
+          text-gray-200
+        "
+      >
+        <div className="text-center px-6">
           <img
             src="/Image/nil2.jpg"
             alt="Nilesh Profile"
-            className="w-48 h-64 rounded-[100px_100px_100px_100px] mx-auto border-4 border-white shadow-xl object-cover"
+            className="w-48 h-64 rounded-[100px] mx-auto border-4 border-gray-700 object-cover glow-animation"
           />
-
-          <h1 className="text-xl font-bold mt-4">Nilesh Rathod</h1>
-          <p className="text-xs mt-1 uppercase tracking-wide">Portfolio</p>
+          <h1 className="text-2xl font-bold mt-6 text-white select-text">Nilesh Rathod</h1>
+          <p className="text-xs mt-1 uppercase tracking-wide text-gray-400 select-text">
+            Portfolio
+          </p>
         </div>
-        <div className="flex justify-center gap-4 text-xl text-white mt-6">
+
+        <div className="flex justify-center gap-6 text-2xl text-gray-300 mt-8">
           {socialLinks.map((social, i) => (
             <a
               key={i}
@@ -81,14 +89,14 @@ export default function Navbar() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={social.label}
-              className={`transition duration-300 ${social.color}`}
+              className={`transition duration-300 ${social.color} focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#0563bb] rounded`}
             >
               {social.icon}
             </a>
           ))}
         </div>
 
-        <nav className="flex flex-col items-center mt-10 space-y-6 text-sm font-semibold uppercase text-white">
+        <nav className="flex flex-col items-center mt-12 space-y-7 text-sm font-semibold uppercase text-gray-300 select-none">
           {navItems.map((item) => (
             <Link
               key={item.name}
@@ -96,40 +104,52 @@ export default function Navbar() {
               smooth
               duration={500}
               offset={-60}
-              activeClass="text-yellow-300 font-bold"
               spy
-              className="flex items-center gap-2 cursor-pointer hover:text-yellow-300 transition-all"
+              activeClass="text-yellow-300 font-bold"
+              className="flex items-center gap-3 cursor-pointer hover:text-yellow-300 transition-all focus:outline-none focus:ring-2 focus:ring-yellow-300 rounded"
             >
-              {item.icon} {item.name}
+              <span className="text-lg">{item.icon}</span> {item.name}
             </Link>
           ))}
         </nav>
       </aside>
 
+      {/* Mobile Menu Button */}
       <button
         onClick={() => setNavOpen(!navOpen)}
-        className="fixed top-4 right-4 z-50 text-2xl text-white bg-[#0563bb] p-3 rounded-full shadow-lg transition-transform hover:rotate-90 md:hidden"
-        aria-label="Toggle menu"
+        className="
+          fixed top-5 right-5 z-50 text-3xl text-white bg-[#0563bb]
+          p-3 rounded-full shadow-lg transition-transform
+          hover:rotate-90 focus:rotate-90 focus:outline-none focus:ring-4 focus:ring-[#0d3e70]
+          md:hidden
+        "
+        aria-label={navOpen ? "Close menu" : "Open menu"}
       >
         {navOpen ? <FaTimes /> : <FaBars />}
       </button>
 
+      {/* Mobile Sidebar */}
       <aside
-        className={`fixed top-0 left-0 h-full w-64 bg-black/80 backdrop-blur-md text-white z-50 transform transition-transform duration-300 ease-in-out ${
-          navOpen ? "translate-x-0" : "-translate-x-full"
-        } md:hidden`}
+        className={`
+          fixed top-0 left-0 h-full w-64
+          bg-black/90 backdrop-blur-md 
+          text-gray-200 z-50
+          transform transition-transform duration-300 ease-in-out
+          ${navOpen ? "translate-x-0" : "-translate-x-full"}
+          md:hidden
+          shadow-xl
+        `}
       >
-        <div className="text-center mt-16">
+        <div className="text-center mt-16 px-6">
           <img
-            src="/Image/nil5.jpg"
+            src="/Image/nil2.jpg"
             alt="Nilesh Profile"
-            className="w-36 h-52 rounded-[80px_80px_80px_80px] mx-auto border-4 border-white shadow-lg object-cover"
+            className="w-40 h-56 rounded-[80px] mx-auto border-4 border-gray-700 object-cover glow-animation"
           />
-
-          <p className="text-base font-semibold mt-2">Nilesh Rathod</p>
+          <p className="text-lg font-semibold mt-4 select-text">Nilesh Rathod</p>
         </div>
 
-        <div className="flex justify-center gap-4 text-xl text-white mt-4 mb-6 px-6">
+        <div className="flex justify-center gap-5 text-3xl text-gray-300 mt-6 mb-8 px-6">
           {socialLinks.map((social, i) => (
             <a
               key={i}
@@ -137,14 +157,14 @@ export default function Navbar() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={social.label}
-              className={`transition duration-300 ${social.color}`}
+              className={`transition duration-300 ${social.color} focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#0563bb] rounded`}
             >
               {social.icon}
             </a>
           ))}
         </div>
 
-        <nav className="flex flex-col space-y-8 px-6 py-10 text-sm font-semibold text-gray-300 uppercase">
+        <nav className="flex flex-col space-y-8 px-6 py-10 text-sm font-semibold uppercase text-gray-300 select-none">
           {navItems.map((item) => (
             <Link
               key={item.name}
@@ -152,15 +172,35 @@ export default function Navbar() {
               smooth
               duration={500}
               offset={-20}
-              activeClass="text-yellow-300 font-bold"
               spy
-              className="flex items-center gap-3 cursor-pointer hover:text-yellow-300 transition"
+              activeClass="text-yellow-300 font-bold"
+              className="flex items-center gap-3 cursor-pointer hover:text-yellow-300 transition focus:outline-none focus:ring-2 focus:ring-yellow-300 rounded"
+              onClick={() => setNavOpen(false)} // close menu on link click
             >
-              {item.icon} {item.name}
+              <span className="text-lg">{item.icon}</span> {item.name}
             </Link>
           ))}
         </nav>
       </aside>
+
+      {/* CSS animations for glowing shadow */}
+      <style>{`
+        @keyframes glowPulse {
+          0%, 100% {
+            box-shadow:
+              0 0 10px rgba(0, 255, 255, 0.4),
+              0 0 20px rgba(0, 255, 255, 0.3);
+          }
+          50% {
+            box-shadow:
+              0 0 20px rgba(0, 255, 255, 0.8),
+              0 0 40px rgba(0, 255, 255, 0.6);
+          }
+        }
+        .glow-animation {
+          animation: glowPulse 3s ease-in-out infinite;
+        }
+      `}</style>
     </>
   );
 }
