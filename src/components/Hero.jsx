@@ -46,6 +46,7 @@ export default function Hero() {
       }`}
       style={{ backgroundImage: `url(${backgroundImage})` }}
     >
+      
       <div className="absolute bottom-10 left-10 max-w-2xl space-y-2 leading-tight">
         <h1 className="text-5xl md:text-6xl font-extrabold drop-shadow-[2px_2px_6px_rgba(0,0,0,0.8)]">
           Nilesh Rathod

@@ -8,6 +8,7 @@ import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
+
 export default function App() {
   const TRACKING_ID = import.meta.env.VITE_GA_ID;
 
@@ -20,6 +21,7 @@ export default function App() {
     }
   }, []);
   return (
+    
     <div className="bg-white">
       <Navbar />
       <main className="md:ml-64 mt-0">
@@ -31,5 +33,6 @@ export default function App() {
         <Footer />
       </main>
     </div>
+    
   );
 }

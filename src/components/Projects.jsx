@@ -23,7 +23,7 @@ export default function Projects() {
       title: "Snake Game",
       description:
         "A classic browser-based snake game using HTML5, CSS3, and JavaScript. Includes live scoring, keyboard controls, and smooth gameplay.",
-      tech: ["HTML5", "CSS3", "JavaScript"],
+      tech: ["HTML5", "CSS3", "JavaScript","Dom Manipulation"],
       github: "https://github.com/nilesh7154/JS-Game",
       image: "/Image/Snakeg.png",
     },
@@ -31,8 +31,8 @@ export default function Projects() {
       title: "Portfolio Website",
       description:
         "Personal portfolio built with React and TailwindCSS to showcase projects, skills, and contact details.",
-      tech: ["React.js", "Tailwind CSS"],
-      github: "https://github.com/nilesh7154/My-Portfolio",
+      tech: ["React.js", "Tailwind CSS","CSS3","HTML5","React-typed"],
+      github: "https://github.com/nilesh7154/Nilesh-Port",
       image: "/Image/port.png",
     },
   ];
@@ -59,7 +59,7 @@ export default function Projects() {
           {projects.map((project, index) => (
             <article
               key={index}
-              className="bg-gray-800 rounded-xl shadow-[0_4px_20px_rgba(0,255,255,0.3)] p-6 flex flex-col hover:shadow-[0_0_30px_8px_rgba(0,255,255,0.7)] hover:scale-[1.03] transition-transform duration-500 cursor-pointer focus-within:scale-[1.03] focus-within:shadow-[0_0_30px_8px_rgba(0,255,255,0.7)] outline-none"
+              className="bg-gray-800 rounded-xl shadow-[0_4px_20px_rgba(0,255,255,0.3)] p-6 flex flex-col hover:shadow-[0_0_30px_8px_rgba(0,255,255,0.7)] hover:scale-[1.03] transition-transform duration-500  focus-within:scale-[1.03] focus-within:shadow-[0_0_30px_8px_rgba(0,255,255,0.7)] outline-none"
               tabIndex={0}
               aria-label={`Project: ${project.title}`}
             >

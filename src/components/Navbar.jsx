@@ -69,6 +69,7 @@ export default function Navbar() {
           text-gray-200
         "
       >
+      
         <div className="text-center px-6">
           <img
             src="/Image/nil2.jpg"

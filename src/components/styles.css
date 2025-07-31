@@ -1,0 +1,31 @@
+/* Global styles and dark mode toggle */
+
+body {
+  background-color: #fff;
+  color: #000;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+/* Button base styling for toggle */
+.dark-mode-toggle-btn {
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  color: inherit;
+}
+
+/* Focus ring for accessibility */
+.dark-mode-toggle-btn:focus {
+  outline-offset: 2px;
+  outline: 2px solid #38bdf8; /* Cyan ring */
+}
+
+/* Optional: color for sun icon to stand out */
+.light-mode {
+  color: #f39c12;
+}
