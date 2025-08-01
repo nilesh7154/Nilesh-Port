@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 
+// Icons CDN links
 const ICONS = {
   HTML: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
   CSS: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
@@ -20,6 +21,7 @@ const ICONS = {
   Tailwind: "https://unpkg.com/simple-icons@v9/icons/tailwindcss.svg",
 };
 
+// Skill categories (with icons)
 const SKILL_CATEGORIES = [
   {
     title: "💻 Programming Languages",
@@ -59,6 +61,7 @@ const SKILL_CATEGORIES = [
   },
 ];
 
+// Soft skills (emoji only)
 const SOFT_SKILLS = [
   { name: "Communication", icon: "💬" },
   { name: "Leadership", icon: "🤝" },
@@ -66,6 +69,7 @@ const SOFT_SKILLS = [
   { name: "Problem Solving", icon: "🧩" },
 ];
 
+// Personal interests (emoji only)
 const INTERESTS = [
   { name: "Web Development", icon: "🕸️" },
   { name: "Content Creation", icon: "✍️" },
@@ -73,6 +77,7 @@ const INTERESTS = [
   { name: "Digital Marketing", icon: "💻" },
 ];
 
+// Animation container for cards
 const containerVariants = {
   hidden: {},
   visible: {
@@ -80,6 +85,7 @@ const containerVariants = {
   },
 };
 
+// Animation for each card
 const cardVariants = {
   hidden: { rotateX: 90, opacity: 0 },
   visible: {
@@ -95,29 +101,37 @@ export default function Skills() {
       id="skills"
       className="min-h-screen px-6 py-24 bg-gradient-to-b from-gray-950 via-gray-900 to-black text-gray-200"
     >
+      {/* Heading */}
       <h2 className="text-4xl font-bold text-center mb-14 underline decoration-cyan-400 underline-offset-8">
         Skills & Interests
       </h2>
+
+      {/* Intro paragraph */}
       <p className="text-gray-300 leading-relaxed text-center mb-10">
         I bring a perfect mix of design aesthetics and development logic. I care deeply about clean code,<br />
         fast load times, responsive layouts, and seamless user experiences. With a curious mind and solid understanding of modern tech,<br />
         I love building digital products that shine.
       </p>
 
+      {/* Skills Grid */}
       <motion.div
-        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-7xl mx-auto px-2"
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-7xl mx-auto "
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
       >
+        {/* Technical Skills */}
         {SKILL_CATEGORIES.map((section) => (
           <SkillCard key={section.title} title={section.title} skills={section.skills} />
         ))}
+
+        {/* Soft Skills & Interests */}
         <SkillCard title="💡 Soft Skills" skills={SOFT_SKILLS} />
         <SkillCard title="🎯 Interests" skills={INTERESTS} />
       </motion.div>
 
+      {/* Custom bounce + glow styles */}
       <style>{`
         @keyframes bounceIcons {
           0%, 100% { transform: translateY(0); }
@@ -126,8 +140,9 @@ export default function Skills() {
         .skill-icon-bounce {
           animation: bounceIcons 2.5s infinite ease-in-out;
         }
+
         @media (hover: hover) {
-          .hover\:shadow-cyan-glow:hover {
+          .hover\\:shadow-cyan-glow:hover {
             box-shadow: 0 0 40px 12px rgba(0, 255, 255, 0.7);
           }
         }
@@ -136,18 +151,25 @@ export default function Skills() {
   );
 }
 
+// SkillCard Component
 function SkillCard({ title, skills }) {
+  // Check if this category uses images/icons or emojis
   const hasIconUrl = skills[0]?.iconUrl;
 
   return (
     <motion.div
       variants={cardVariants}
+      whileTap={{ scale: 1.05 }} // Touch effect on mobile
       className="rounded-xl p-6 bg-gray-800/50 border border-cyan-600 shadow-[0_4px_30px_rgba(0,255,255,0.3)] hover:shadow-[0_0_40px_12px_rgba(0,255,255,0.7)] transition-all backdrop-blur-md"
     >
+      {/* Card Title */}
       <h3 className="text-xl font-semibold text-cyan-300 mb-6 text-center">{title}</h3>
-      <div className={hasIconUrl ? "grid grid-cols-2 gap-4" : "flex flex-wrap justify-center gap-3"}>
+
+      {/* Skills grid or badges */}
+      <div className={hasIconUrl ? "grid grid-cols-1 sm:grid-cols-2 gap-4" : "flex flex-wrap justify-center gap-3"}>
         {skills.map((skill) =>
           hasIconUrl ? (
+            // Technical Skill with icon
             <motion.div
               whileHover={{ scale: 1.08 }}
               key={skill.name}
@@ -157,6 +179,7 @@ function SkillCard({ title, skills }) {
               <span>{skill.name}</span>
             </motion.div>
           ) : (
+            // Soft skill or interest badge
             <motion.span
               whileHover={{ scale: 1.1 }}
               key={skill.name}
