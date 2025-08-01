@@ -40,7 +40,7 @@ export default function Projects() {
   return (
     <section
       id="project"
-      className="py-24 bg-gradient-to-b from-gray-900 via-black-800 to-black text-gray-200"
+      className="py-24 bg-gradient-to-b from-gray-950 via-gray-900 to-black text-gray-200"
     >
       <div className="max-w-6xl mx-auto px-6">
         {/* Section Title */}

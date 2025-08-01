@@ -1,7 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-// Icons URLs for skills
 const ICONS = {
   HTML: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
   CSS: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
@@ -10,23 +9,24 @@ const ICONS = {
   MySQL: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
   Reactjs: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
   Redux: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg",
- Axios: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/axios/axios-plain.svg", // ✅ Axios from devicons fork
+  Axios: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/axios/axios-plain.svg",
   JSON: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/json/json-original.svg",
   GitHub: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg",
   Postman: "https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg",
   NPM: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/npm/npm-original-wordmark.svg",
   Python: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
   C: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg",
+  jQuery: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jquery/jquery-plain.svg",
+  Tailwind: "https://unpkg.com/simple-icons@v9/icons/tailwindcss.svg",
 };
 
-// Skill categories with image icons
 const SKILL_CATEGORIES = [
   {
     title: "💻 Programming Languages",
     skills: [
       { name: "Java", iconUrl: ICONS.Java },
       { name: "Python", iconUrl: ICONS.Python },
-      { name: "C-lang", iconUrl: ICONS.C },
+      { name: "C", iconUrl: ICONS.C },
       { name: "MySQL", iconUrl: ICONS.MySQL },
     ],
   },
@@ -37,15 +37,15 @@ const SKILL_CATEGORIES = [
       { name: "CSS", iconUrl: ICONS.CSS },
       { name: "JavaScript", iconUrl: ICONS.JavaScript },
       { name: "React.js", iconUrl: ICONS.Reactjs },
-      { name: "Tailwind CSS", iconUrl: "https://unpkg.com/simple-icons@v9/icons/tailwindcss.svg" },
-     { name: "NPM", iconUrl: ICONS.NPM },
+      { name: "Tailwind CSS", iconUrl: ICONS.Tailwind },
+      { name: "NPM", iconUrl: ICONS.NPM },
     ],
   },
   {
     title: "📦 Libraries",
     skills: [
       { name: "Redux", iconUrl: ICONS.Redux },
-      { name: "jQuery", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jquery/jquery-plain.svg" },
+      { name: "jQuery", iconUrl: ICONS.jQuery },
       { name: "Axios", iconUrl: ICONS.Axios },
       { name: "JSON", iconUrl: ICONS.JSON },
     ],
@@ -59,7 +59,6 @@ const SKILL_CATEGORIES = [
   },
 ];
 
-// Soft skills and interests with emoji icons only
 const SOFT_SKILLS = [
   { name: "Communication", icon: "💬" },
   { name: "Leadership", icon: "🤝" },
@@ -74,118 +73,100 @@ const INTERESTS = [
   { name: "Digital Marketing", icon: "💻" },
 ];
 
-// Framer Motion container animation to stagger children appearance
 const containerVariants = {
   hidden: {},
   visible: {
-    transition: {
-      staggerChildren: 0.18,
-    },
+    transition: { staggerChildren: 0.18 },
   },
 };
 
-// Individual card animation variants (fade + slide up)
 const cardVariants = {
-  hidden: { opacity: 0, y: 40 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" } },
+  hidden: { rotateX: 90, opacity: 0 },
+  visible: {
+    rotateX: 0,
+    opacity: 1,
+    transition: { duration: 0.8, ease: "easeOut" },
+  },
 };
 
-// Main Skills component
 export default function Skills() {
   return (
     <section
       id="skills"
-      className="min-h-screen px-6 py-16 bg-gradient-to-b from-gray-900 via-gray-800 to-black text-gray-200"
+      className="min-h-screen px-6 py-24 bg-gradient-to-b from-gray-950 via-gray-900 to-black text-gray-200"
     >
-      <h2 className="text-4xl font-bold text-center mb-12 underline underline-offset-8 decoration-cyan-400">
+      <h2 className="text-4xl font-bold text-center mb-14 underline decoration-cyan-400 underline-offset-8">
         Skills & Interests
       </h2>
+      <p className="text-gray-300 leading-relaxed text-center mb-10">
+        I bring a perfect mix of design aesthetics and development logic. I care deeply about clean code,<br />
+        fast load times, responsive layouts, and seamless user experiences. With a curious mind and solid understanding of modern tech,<br />
+        I love building digital products that shine.
+      </p>
 
       <motion.div
-        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 max-w-7xl mx-auto"
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-7xl mx-auto px-2"
         variants={containerVariants}
         initial="hidden"
-        animate="visible"
+        whileInView="visible"
+        viewport={{ once: true }}
       >
-        {/* Skill categories */}
-        {SKILL_CATEGORIES.map(({ title, skills }) => (
-          <UnifiedCard key={title} title={title} skills={skills} />
+        {SKILL_CATEGORIES.map((section) => (
+          <SkillCard key={section.title} title={section.title} skills={section.skills} />
         ))}
-
-        {/* Soft Skills and Interests */}
-        <UnifiedCard title="💡 Soft Skills" skills={SOFT_SKILLS} />
-        <UnifiedCard title="🎯 Interests" skills={INTERESTS} />
+        <SkillCard title="💡 Soft Skills" skills={SOFT_SKILLS} />
+        <SkillCard title="🎯 Interests" skills={INTERESTS} />
       </motion.div>
+
+      <style>{`
+        @keyframes bounceIcons {
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(-8px); }
+        }
+        .skill-icon-bounce {
+          animation: bounceIcons 2.5s infinite ease-in-out;
+        }
+        @media (hover: hover) {
+          .hover\:shadow-cyan-glow:hover {
+            box-shadow: 0 0 40px 12px rgba(0, 255, 255, 0.7);
+          }
+        }
+      `}</style>
     </section>
   );
 }
 
-// Unified Card component for all categories
-function UnifiedCard({ title, skills }) {
-  // Detect if skills have image icons or emoji icons
-  const skillsHaveImageIcons = skills[0]?.iconUrl !== undefined;
+function SkillCard({ title, skills }) {
+  const hasIconUrl = skills[0]?.iconUrl;
 
   return (
-    <motion.article
-      className="rounded-xl p-6 flex flex-col items-center cursor-pointer
-        bg-transparent border border-cyan-600 border-opacity-30
-        transition-shadow duration-300 ease-in-out
-        backdrop-blur-lg
-        focus:outline-none focus:ring-2 focus:ring-cyan-400"
+    <motion.div
       variants={cardVariants}
-      whileHover={{ scale: 1.05, boxShadow: "0 0 25px 8px rgba(56,189,248,0.8)" }}
-      whileTap={{ scale: 0.97, boxShadow: "0 0 30px 10px rgba(56,189,248,0.9)" }}
-      tabIndex={0}
-      role="region"
-      aria-label={title}
+      className="rounded-xl p-6 bg-gray-800/50 border border-cyan-600 shadow-[0_4px_30px_rgba(0,255,255,0.3)] hover:shadow-[0_0_40px_12px_rgba(0,255,255,0.7)] transition-all backdrop-blur-md"
     >
-      <h3 className="text-xl text-cyan-300 font-semibold mb-6">{title}</h3>
-
-      <div
-        className={
-          "w-full gap-6 " +
-          (skillsHaveImageIcons ? "grid grid-cols-2" : "flex flex-wrap justify-center gap-4")
-        }
-      >
-        {skills.map(({ name, iconUrl, icon }) =>
-          skillsHaveImageIcons ? (
-            <motion.button
-              key={name}
-              className="flex items-center gap-3 p-3 rounded-lg bg-transparent border border-cyan-700 bg-opacity-20 text-cyan-300 font-semibold
-                cursor-pointer select-none
-                focus:outline-none focus:ring-2 focus:ring-cyan-400
-                transition-shadow"
-              whileHover={{ scale: 1.1, boxShadow: "0 0 15px 6px rgba(56,189,248,0.9)" }}
-              whileTap={{ scale: 0.95, boxShadow: "0 0 20px 10px rgba(56,189,248,1)" }}
-              aria-label={name}
-              tabIndex={0}
+      <h3 className="text-xl font-semibold text-cyan-300 mb-6 text-center">{title}</h3>
+      <div className={hasIconUrl ? "grid grid-cols-2 gap-4" : "flex flex-wrap justify-center gap-3"}>
+        {skills.map((skill) =>
+          hasIconUrl ? (
+            <motion.div
+              whileHover={{ scale: 1.08 }}
+              key={skill.name}
+              className="flex items-center gap-3 p-2 rounded-md bg-gray-700/40 border border-cyan-600 text-cyan-200 font-medium skill-icon-bounce hover:shadow-cyan-glow"
             >
-              <img
-                src={iconUrl}
-                alt={`${name} icon`}
-                className="w-10 h-10 rounded-full object-contain"
-                draggable={false}
-                loading="lazy"
-              />
-              {name}
-            </motion.button>
+              <img src={skill.iconUrl} alt={skill.name} className="w-8 h-8 object-contain" />
+              <span>{skill.name}</span>
+            </motion.div>
           ) : (
             <motion.span
-              key={name}
-              className="flex items-center gap-2 px-4 py-2 rounded-full bg-transparent border border-cyan-600 text-cyan-400 font-semibold text-sm cursor-default select-none
-                focus:outline-none focus:ring-2 focus:ring-cyan-400"
-              whileHover={{ scale: 1.1, boxShadow: "0 0 15px 6px rgba(56,189,248,0.9)" }}
-              whileTap={{ scale: 0.95, boxShadow: "0 0 20px 7px rgba(56,189,248,1)" }}
-              tabIndex={0}
-              role="button"
-              aria-label={name}
-              title={name}
+              whileHover={{ scale: 1.1 }}
+              key={skill.name}
+              className="px-4 py-2 rounded-full border border-cyan-600 bg-gray-700/40 text-cyan-300 font-semibold text-sm skill-icon-bounce hover:shadow-cyan-glow"
             >
-              <span className="text-xl">{icon}</span> {name}
+              <span className="mr-2">{skill.icon}</span> {skill.name}
             </motion.span>
           )
         )}
       </div>
-    </motion.article>
+    </motion.div>
   );
 }

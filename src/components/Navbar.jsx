@@ -12,17 +12,21 @@ import {
   FaInstagram,
   FaFacebook,
   FaWhatsapp,
+  FaGraduationCap, // 🎓 New icon for Education
 } from "react-icons/fa";
 import { Link } from "react-scroll";
 
+// Navigation items including Education
 const navItems = [
   { name: "Home", icon: <FaHome /> },
   { name: "About", icon: <FaUser /> },
   { name: "Skills", icon: <FaLaptopCode /> },
+  { name: "Education", icon: <FaGraduationCap /> }, // 🎓 Added here
   { name: "Project", icon: <FaProjectDiagram /> },
   { name: "Contact", icon: <FaEnvelope /> },
 ];
 
+// Social media links
 const socialLinks = [
   {
     href: "https://github.com/nilesh7154",
@@ -47,7 +51,8 @@ const socialLinks = [
     icon: <FaFacebook />,
     color: "hover:text-[#1877F2]",
     label: "Facebook",
-  }, {
+  },
+  {
     href: "https://wa.me/918530019387",
     icon: <FaWhatsapp />,
     color: "hover:text-[#25D366]",
@@ -61,15 +66,7 @@ export default function Navbar() {
   return (
     <>
       {/* Desktop Sidebar */}
-      <aside
-        className="
-          hidden md:fixed md:top-0 md:left-0 md:h-full md:w-64
-          bg-gradient-to-b from-gray-900 via-gray-800 to-black
-          md:shadow-xl md:flex md:flex-col md:justify-between md:py-10 md:z-50 md:rounded-r-lg
-          text-gray-200
-        "
-      >
-      
+      <aside className="hidden md:fixed md:top-0 md:left-0 md:h-full md:w-64 bg-gradient-to-b from-gray-900 via-gray-800 to-black md:shadow-xl md:flex md:flex-col md:justify-between md:py-10 md:z-50 md:rounded-r-lg text-gray-200">
         <div className="text-center px-6">
           <img
             src="/Image/nil2.jpg"
@@ -77,11 +74,10 @@ export default function Navbar() {
             className="w-48 h-64 rounded-[100px] mx-auto border-4 border-gray-700 object-cover glow-animation"
           />
           <h1 className="text-2xl font-bold mt-6 text-white select-text">Nilesh Rathod</h1>
-          <p className="text-xs mt-1 uppercase tracking-wide text-gray-400 select-text">
-            Portfolio
-          </p>
+          <p className="text-xs mt-1 uppercase tracking-wide text-gray-400 select-text">Portfolio</p>
         </div>
 
+        {/* Social Links */}
         <div className="flex justify-center gap-6 text-2xl text-gray-300 mt-8">
           {socialLinks.map((social, i) => (
             <a
@@ -97,6 +93,7 @@ export default function Navbar() {
           ))}
         </div>
 
+        {/* Nav Items */}
         <nav className="flex flex-col items-center mt-12 space-y-7 text-sm font-semibold uppercase text-gray-300 select-none">
           {navItems.map((item) => (
             <Link
@@ -104,7 +101,7 @@ export default function Navbar() {
               to={item.name.toLowerCase()}
               smooth
               duration={500}
-              offset={-60}
+              offset={0}
               spy
               activeClass="text-yellow-300 font-bold"
               className="flex items-center gap-3 cursor-pointer hover:text-yellow-300 transition-all focus:outline-none focus:ring-2 focus:ring-yellow-300 rounded"
@@ -118,12 +115,7 @@ export default function Navbar() {
       {/* Mobile Menu Button */}
       <button
         onClick={() => setNavOpen(!navOpen)}
-        className="
-          fixed top-5 right-5 z-50 text-3xl text-white bg-[#0563bb]
-          p-3 rounded-full shadow-lg transition-transform
-          hover:rotate-90 focus:rotate-90 focus:outline-none focus:ring-4 focus:ring-[#0d3e70]
-          md:hidden
-        "
+        className="fixed top-5 right-5 z-50 text-3xl text-white bg-[#0563bb] p-3 rounded-full shadow-lg transition-transform hover:rotate-90 focus:rotate-90 focus:outline-none focus:ring-4 focus:ring-[#0d3e70] md:hidden"
         aria-label={navOpen ? "Close menu" : "Open menu"}
       >
         {navOpen ? <FaTimes /> : <FaBars />}
@@ -131,15 +123,9 @@ export default function Navbar() {
 
       {/* Mobile Sidebar */}
       <aside
-        className={`
-          fixed top-0 left-0 h-full w-64
-          bg-black/90 backdrop-blur-md 
-          text-gray-200 z-50
-          transform transition-transform duration-300 ease-in-out
-          ${navOpen ? "translate-x-0" : "-translate-x-full"}
-          md:hidden
-          shadow-xl
-        `}
+        className={`fixed top-0 left-0 h-full w-64 bg-black/90 backdrop-blur-md text-gray-200 z-50 transform transition-transform duration-300 ease-in-out ${
+          navOpen ? "translate-x-0" : "-translate-x-full"
+        } md:hidden shadow-xl`}
       >
         <div className="text-center mt-16 px-6">
           <img
@@ -150,6 +136,7 @@ export default function Navbar() {
           <p className="text-lg font-semibold mt-4 select-text">Nilesh Rathod</p>
         </div>
 
+        {/* Social Links */}
         <div className="flex justify-center gap-5 text-3xl text-gray-300 mt-6 mb-8 px-6">
           {socialLinks.map((social, i) => (
             <a
@@ -165,6 +152,7 @@ export default function Navbar() {
           ))}
         </div>
 
+        {/* Nav Items for Mobile */}
         <nav className="flex flex-col space-y-8 px-6 py-10 text-sm font-semibold uppercase text-gray-300 select-none">
           {navItems.map((item) => (
             <Link
@@ -172,11 +160,11 @@ export default function Navbar() {
               to={item.name.toLowerCase()}
               smooth
               duration={500}
-              offset={-20}
+              offset={0}
               spy
               activeClass="text-yellow-300 font-bold"
               className="flex items-center gap-3 cursor-pointer hover:text-yellow-300 transition focus:outline-none focus:ring-2 focus:ring-yellow-300 rounded"
-              onClick={() => setNavOpen(false)} // close menu on link click
+              onClick={() => setNavOpen(false)}
             >
               <span className="text-lg">{item.icon}</span> {item.name}
             </Link>
@@ -184,7 +172,7 @@ export default function Navbar() {
         </nav>
       </aside>
 
-      {/* CSS animations for glowing shadow */}
+      {/* Glowing animation */}
       <style>{`
         @keyframes glowPulse {
           0%, 100% {

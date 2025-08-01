@@ -7,6 +7,7 @@ import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import Education from "./components/Education";
 
 
 export default function App() {
@@ -27,6 +28,7 @@ export default function App() {
       <main className="md:ml-64 mt-0">
         <Hero />
         <About />
+        <Education/>
         <Skills />
         <Projects />
         <Contact />

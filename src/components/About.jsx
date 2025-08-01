@@ -1,198 +1,144 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import React from "react";
+import {
+  FaUserGraduate,
+  FaCode,
+  FaRocket,
+  FaLightbulb,
+  FaJava,
+  FaBullseye,
+} from "react-icons/fa";
+import { ReactTyped } from "react-typed";
 
 export default function About() {
   return (
     <section
       id="about"
-      // Section with minimum full screen height, dark gradient background, gray text, and padding
-      className="min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-black text-gray-300 px-4 sm:px-6 py-20"
+      className="relative py-24 bg-gradient-to-b from-gray-950 via-gray-900 to-black text-gray-200 scroll-mt-20"
     >
-      {/* Section Heading */}
-      <h2
-        // White bold centered title with underline decoration in cyan
-        className="text-4xl font-extrabold text-center mb-12 underline underline-offset-8 decoration-cyan-500 text-white"
-      >
-        About Me
-      </h2>
+      <div className="relative max-w-6xl mx-auto px-6">
+        {/* Section Header */}
+        <h2 className="text-4xl font-bold text-center mb-8 tracking-wide underline decoration-cyan-400 underline-offset-8">
+          About Me
+        </h2>
+        <p className="text-center text-cyan-300 mb-12 max-w-xl mx-auto">
+          I'm a Computer Science student passionate about building beautiful & performant web applications.
+        </p>
 
-      {/* Main content grid: 2 columns on md+ screens, gap between, items aligned start */}
-      <div className="max-w-6xl mx-auto grid gap-12 md:grid-cols-2 items-start">
-        {/* PROFILE PICTURE & BASIC INFO */}
-        <div
-          // Flex column, center aligned on small screens, left aligned on md+
-          // Fade-in animation class, ordering changes for small vs large screens to put image on right
-          className="flex flex-col items-center md:items-center text-center md:text-left animate-fadeInUp order-1 md:order-2"
-        >
-          {/* Profile Picture Button to add focus ring and scale on hover/focus */}
-          <button
-            className="
-              outline-none focus:ring-4 focus:ring-cyan-500
-              rounded-lg transition-transform duration-300
-              hover:scale-105 focus:scale-105
-            "
-            aria-label="Profile Picture"
-          >
-            {/* Profile Image */}
-            <img
-              src="/Image/Profile.jpg"
-              alt="Nilesh Rathod"
-              className="w-72 h-[400px] max-w-full object-cover rounded-lg shadow-2xl"
-              draggable={false}
-            />
-          </button>
+        {/* Main Grid */}
+        <div className="grid md:grid-cols-2 gap-10 items-center">
+          {/* LEFT TEXT */}
+          <div className="space-y-6 bg-gray-800/50 backdrop-blur-md border border-cyan-600 rounded-xl p-8 shadow-[0_4px_30px_rgba(0,255,255,0.3)] hover:shadow-[0_0_40px_12px_rgba(0,255,255,0.7)] transition-shadow duration-500 animate-fadeInUp order-2 md:order-1">
+            <div className="flex items-start gap-3">
+              <FaUserGraduate className="text-cyan-400 text-xl mt-1" />
+              <p>
+                Hi, I'm <span className="text-cyan-400 font-semibold">Nilesh Rathod</span>, a CSE student specializing in modern front-end and full-stack development.
+              </p>
+            </div>
 
-          {/* Job title below image with cyan color and drop shadow for emphasis */}
-          <p className="mt-8 text-2xl font-semibold text-cyan-400 tracking-wide font-serif drop-shadow-md">
-            Frontend & Full Stack Developer
-          </p>
+            <div className="flex items-start gap-3">
+              <FaCode className="text-cyan-400 text-xl mt-1" />
+              <p>
+                I love building scalable UIs using React, Tailwind CSS, and JavaScript. I focus on performance, responsiveness, and accessibility.
+              </p>
+            </div>
 
-          {/* Short description in italic gray text, restricted width for better readability, centered */}
-          <p className="italic text-gray-400 max-w-xs mx-auto text-center mt-2">
-            Passionate CSE student building responsive full-stack web apps with React, Tailwind CSS, and modern tools.
-          </p>
+            <div className="flex items-start gap-3">
+              <FaRocket className="text-cyan-400 text-xl mt-1" />
+              <p>
+                I'm always learning, contributing to open-source, and aiming to deliver elegant solutions to real-world problems.
+              </p>
+            </div>
 
-          {/* Link to Resume styled as cyan rounded button with hover/focus states */}
-          <a
-            href="/Image/Nilesh_Rathod_Resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="
-              mt-8 inline-block bg-cyan-600 hover:bg-cyan-700
-              text-white font-semibold px-6 py-3 rounded-full
-              shadow-lg transition focus:ring-4 focus:ring-indigo-500 outline-none
-            "
-          >
-            📄 View Resume
-          </a>
-        </div>
+            <div className="flex items-start gap-3">
+              <FaLightbulb className="text-cyan-400 text-xl mt-1" />
+              <p>
+                I value <span className="text-cyan-400 font-semibold">creativity</span>,{" "}
+                <span className="text-cyan-400 font-semibold">collaboration</span>, and{" "}
+                <span className="text-cyan-400 font-semibold">curiosity</span>. I thrive in dynamic environments and enjoy turning ideas into impactful digital solutions.
+              </p>
+            </div>
 
-        {/* BIO & DETAILS COLUMN */}
-        <div className="animate-fadeInUp order-2 md:order-1">
-          {/* Introductory paragraph with cyan highlighted name */}
-          <p className="text-lg leading-relaxed mb-6">
-            I'm <span className="font-semibold text-cyan-400">Nilesh Rathod</span>, a dedicated Computer Science Engineering student with a deep passion for building responsive, accessible, and performant web applications. I specialize in crafting front-end and full stack experiences using React.js, Tailwind CSS, JavaScript, and modern tools.
-          </p>
+            <div className="flex items-start gap-3">
+              <FaJava className="text-cyan-400 text-xl mt-1" />
+              <p>
+                Recently enhancing my skills in <span className="text-cyan-400 font-semibold">Core Java</span> and{" "}
+                <span className="text-cyan-400 font-semibold">Object-Oriented Programming</span>. I'm also exploring{" "}
+                <span className="text-cyan-400 font-semibold">servlet-based web applications</span> and backend integration.
+              </p>
+            </div>
 
-          {/* Additional info paragraph */}
-          <p className="text-lg leading-relaxed mb-8">
-            I love solving real-world problems, collaborating on open source projects, and continuously expanding my tech stack. My portfolio showcases my commitment to clean UI/UX and best development practices.
-          </p>
-
-          {/* EDUCATION CARD */}
-          <div className="bg-gray-800 rounded-lg p-6 mb-8 shadow-lg border border-cyan-700">
-            {/* Education title */}
-            <h3 className="text-xl font-semibold text-cyan-400 mb-3">
-              🎓 Education
-            </h3>
-            {/* Education details */}
-            <div className="space-y-1 text-gray-200 text-sm">
-              <p className="font-medium">Bachelor of Engineering (Computer Science Engineering)</p>
-              <p>KBC North Maharashtra University, Jalgaon</p>
-              <p>2022 – Expected 2026</p>
-              <p>CGPA: 8.00 / 10.00</p>
+            <div className="flex items-start gap-3">
+              <FaBullseye className="text-cyan-400 text-xl mt-1" />
+              <p>
+                My goal is to become a developer who not only writes efficient code but also delivers intuitive, enjoyable user experiences.
+              </p>
             </div>
           </div>
 
-          {/* CONTACT INFORMATION CARDS GRID */}
-          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-sm">
-            {/* Location */}
-            <li className="bg-gray-800 rounded-md p-4 shadow-md border border-cyan-700 select-text">
-              <strong className="text-cyan-400">📍 Location:</strong>
-              <br />
-              <a
-                href="https://www.google.com/maps/search/?api=1&query=Jalgaon+Maharashtra+India"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-cyan-400 hover:underline block mt-1"
-              >
-                Jalgaon, Maharashtra, India
-              </a>
-            </li>
+          {/* RIGHT BLOCK */}
+          <div className="flex flex-col items-center justify-center text-center animate-fadeInUp order-1 md:order-2">
+            <div className="group relative w-72 h-[400px] overflow-hidden rounded-xl border border-cyan-600 shadow-[0_4px_30px_rgba(0,255,255,0.3)] hover:shadow-[0_0_40px_12px_rgba(0,255,255,0.7)] transition-all duration-500 transform hover:scale-105 hover:rotate-1">
+              {/* Glowing layer */}
+              <div className="absolute inset-0 bg-gradient-to-tr from-cyan-400 to-pink-500 blur-2xl opacity-30 group-hover:opacity-50 transition-opacity duration-500 rounded-xl" />
+              {/* Profile Image */}
+              <img
+                src="/Image/Profile.jpg"
+                alt="Nilesh Rathod"
+                className="w-full h-full object-cover rounded-xl"
+              />
+            </div>
 
-            {/* Date of birth */}
-            <li className="bg-gray-800 rounded-md p-4 shadow-md border border-cyan-700 select-text">
-              <strong className="text-cyan-400">🎂 Date of Birth:</strong>
-              <br />
-              <a
-                href="https://calendar.google.com/calendar/render?action=TEMPLATE&dates=20030608/20030608&text=Nilesh%20Rathod%20Birthday"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-cyan-400 hover:underline block mt-1"
-              >
-                8 June 2003
-              </a>
-            </li>
+            {/* Typed Text */}
+            <h2 className="text-xl md:text-2xl font-medium drop-shadow-[1px_1px_5px_rgba(0,0,0,0.7)] mt-6">
+              <span className="inline-block relative min-w-[280px]">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-violet-500 to-cyan-400 drop-shadow-[1px_1px_4px_rgba(0,0,0,0.6)] animate-gradient">
+                  <ReactTyped
+                    strings={[
+                      "Full Stack Web Developer",
+                      "React.js Developer",
+                      "Frontend Enthusiast",
+                    ]}
+                    typeSpeed={60}
+                    backSpeed={40}
+                    loop
+                  />
+                </span>
+              </span>
+            </h2>
 
-            {/* Email */}
-            <li className="bg-gray-800 rounded-md p-4 shadow-md border border-cyan-700 select-text">
-              <strong className="text-cyan-400">📧 Email:</strong>
-              <br />
-              <a
-                href="mailto:rathodnilesh7154@gmail.com"
-                className="text-cyan-400 hover:underline block mt-1"
-              >
-                rathodnilesh7154@gmail.com
-              </a>
-            </li>
+            <p className="mt-2 text-gray-400 italic text-sm max-w-xs">
+              Focused on clean UI, fast performance, and smart code.
+            </p>
 
-            {/* Phone */}
-            <li className="bg-gray-800 rounded-md p-4 shadow-md border border-cyan-700 select-text">
-              <strong className="text-cyan-400">📱 Phone:</strong>
-              <br />
-              <a
-                href="tel:+918530019387"
-                className="text-cyan-400 hover:underline block mt-1"
-              >
-                +91 8530019387
-              </a>
-            </li>
-
-            {/* GitHub */}
-            <li className="bg-gray-800 rounded-md p-4 shadow-md border border-cyan-700 flex items-center gap-2 select-text">
-              <FontAwesomeIcon icon={faGithub} className="text-cyan-400" />
-              <strong>GitHub:</strong>
-              <a
-                href="https://github.com/nilesh7154"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-cyan-400 hover:underline ml-1"
-              >
-                Github🔗
-              </a>
-            </li>
-
-            {/* LinkedIn */}
-            <li className="bg-gray-800 rounded-md p-4 shadow-md border border-cyan-700 flex items-center gap-2 select-text">
-              <FontAwesomeIcon icon={faLinkedin} className="text-cyan-400" />
-              <strong>LinkedIn:</strong>
-              <a
-                href="https://www.linkedin.com/in/rathod-nilesh7154/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-cyan-400 hover:underline ml-1"
-              >
-                Linkedin🔗
-              </a>
-            </li>
-          </ul>
+            <a
+              href="/Image/Nilesh_Rathod_Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-6 inline-block bg-cyan-800 hover:bg-cyan-900 text-white font-medium px-6 py-3 rounded-md shadow-lg transition-transform active:scale-95 focus:outline-none focus:ring-4 focus:ring-cyan-400"
+            >
+              📄 View Resume
+            </a>
+          </div>
         </div>
       </div>
 
-      {/* Fade-in animation CSS */}
+      {/* Animations */}
       <style>{`
         @keyframes fadeInUp {
-          0% {
-            opacity: 0;
-            transform: translateY(20px);
-          }
-          100% {
-            opacity: 1;
-            transform: translateY(0);
-          }
+          0% { opacity: 0; transform: translateY(30px); }
+          100% { opacity: 1; transform: translateY(0); }
         }
         .animate-fadeInUp {
-          animation: fadeInUp 0.7s cubic-bezier(0.23, 1, 0.32, 1) both;
+          animation: fadeInUp 1s ease-out both;
+        }
+
+        @keyframes gradient-x {
+          0%, 100% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+        }
+        .animate-gradient {
+          background-size: 200% 200%;
+          animation: gradient-x 6s ease infinite;
         }
       `}</style>
     </section>
