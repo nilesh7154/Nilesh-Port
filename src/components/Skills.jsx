@@ -107,9 +107,9 @@ export default function Skills() {
       </h2>
 
       {/* Intro paragraph */}
-      <p className="text-gray-300 leading-relaxed text-center mb-10">
-        I bring a perfect mix of design aesthetics and development logic. I care deeply about clean code,<br />
-        fast load times, responsive layouts, and seamless user experiences. With a curious mind and solid understanding of modern tech,<br />
+      <p className="italic text-gray-300 leading-relaxed text-center mb-10">
+        I bring a perfect mix of design aesthetics and development logic. I care deeply about clean code,
+        fast load times, responsive layouts, and seamless user experiences. With a curious mind and solid understanding of modern tech,
         I love building digital products that shine.
       </p>
 
