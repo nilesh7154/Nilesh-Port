@@ -40,25 +40,20 @@ const SKILL_CATEGORIES = [
       { name: "JavaScript", iconUrl: ICONS.JavaScript },
       { name: "React.js", iconUrl: ICONS.Reactjs },
       { name: "Tailwind CSS", iconUrl: ICONS.Tailwind },
-      { name: "NPM", iconUrl: ICONS.NPM },
+    
     ],
   },
   {
-    title: "📦 Libraries",
+    title: "📦 Libraries & 🛠️Tools",
     skills: [
       { name: "Redux", iconUrl: ICONS.Redux },
-      { name: "jQuery", iconUrl: ICONS.jQuery },
       { name: "Axios", iconUrl: ICONS.Axios },
       { name: "JSON", iconUrl: ICONS.JSON },
-    ],
-  },
-  {
-    title: "🛠️ Tools",
-    skills: [
       { name: "Git & GitHub", iconUrl: ICONS.GitHub },
       { name: "Postman", iconUrl: ICONS.Postman },
     ],
   },
+  
 ];
 
 // Soft skills (emoji only)
