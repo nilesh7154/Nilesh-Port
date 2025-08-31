@@ -70,8 +70,8 @@ export default function Contact() {
     setSuccess(false);
     setError(false);
     try {
-      await axios.post("http://localhost:5000/messages", formData);
-      setSuccess(true);
+      await axios.post("http://10.67.147.250:5000/messages", formData);
+ setSuccess(true);
       setFormData({
         name: "",
         phone: "",
