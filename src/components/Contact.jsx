@@ -1,5 +1,4 @@
 import { useState } from "react";
-import axios from "axios";
 import {
   FaGithub,
   FaLinkedin,
@@ -9,8 +8,10 @@ import {
 } from "react-icons/fa";
 import { MdEmail, MdPhone, MdLocationOn } from "react-icons/md";
 import { motion } from "framer-motion";
+import emailjs from "emailjs-com";
 
-// Social links with custom shadow and colors
+
+// Social links
 const socialLinks = [
   {
     href: "https://github.com/nilesh7154",
@@ -50,40 +51,38 @@ const socialLinks = [
 ];
 
 export default function Contact() {
-  const [formData, setFormData] = useState({
-    name: "",
-    phone: "",
-    email: "",
-    subject: "",
-    message: "",
-  });
-
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState(false);
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = async (e) => {
+  const sendEmail = (e) => {
     e.preventDefault();
     setSuccess(false);
     setError(false);
-    try {
-      await axios.post("http://10.67.147.250:5000/messages", formData);
- setSuccess(true);
-      setFormData({
-        name: "",
-        phone: "",
-        email: "",
-        subject: "",
-        message: "",
-      });
-    } catch (err) {
-      console.error(err);
-      setError(true);
-    }
+  
+    emailjs
+      .sendForm(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        e.target,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      )
+      .then(
+        () => {
+          setSuccess(true);
+          e.target.reset();
+  
+          // ✅ hide after 4s
+          setTimeout(() => setSuccess(false), 4000);
+        },
+        () => {
+          setError(true);
+  
+          // ✅ hide after 4s
+          setTimeout(() => setError(false), 4000);
+        }
+      );
   };
+  
 
   return (
     <section
@@ -99,43 +98,40 @@ export default function Contact() {
           Have a project in mind or just want to connect? Feel free to reach out below.
         </p>
 
-        {/* Main Grid */}
+        {/* Grid */}
         <div className="grid md:grid-cols-2 gap-10 items-stretch">
-          {/* LEFT: Info Card */}
+          {/* LEFT: Info */}
           <div className="flex flex-col bg-gray-800 bg-opacity-50 backdrop-blur-md border border-cyan-600 rounded-xl shadow-[0_4px_30px_rgba(0,255,255,0.3)] hover:shadow-[0_0_40px_12px_rgba(0,255,255,0.7)] transition-shadow duration-500 overflow-hidden">
-            {/* Image */}
             <img
               src="/Image/connect.jpg"
               alt="Nilesh Rathod"
               className="w-full h-[280px] object-cover"
             />
-
-            {/* Contact Info + Social */}
             <div className="p-6 flex-1 flex flex-col justify-between">
-              <div>
-                <div className="mt-6 space-y-4 text-left text-sm mx-auto w-fit">
-                  <div className="flex items-center gap-3 text-gray-300">
-                    <MdEmail className="text-cyan-400 text-xl" />
-                    <a href="mailto:rathodnilesh7154@gmail.com" className="hover:underline">
-                      rathodnilesh7154@gmail.com
-                    </a>
-                  </div>
-                  <div className="flex items-center gap-3 text-gray-300">
-                    <MdPhone className="text-cyan-400 text-xl" />
-                    <a href="tel:+918530019387" className="hover:underline">
-                      +91 8530019387
-                    </a>
-                  </div>
-                  <div className="flex items-center gap-3 text-gray-300">
-                    <MdLocationOn className="text-cyan-400 text-xl" />
-                    <span>Jalgaon, Maharashtra, India</span>
-                  </div>
+              <div className="mt-6 space-y-4 text-left text-sm mx-auto w-fit">
+                <div className="flex items-center gap-3 text-gray-300">
+                  <MdEmail className="text-cyan-400 text-xl" />
+                  <a href="mailto:rathodnilesh7154@gmail.com" className="hover:underline">
+                    rathodnilesh7154@gmail.com
+                  </a>
+                </div>
+                <div className="flex items-center gap-3 text-gray-300">
+                  <MdPhone className="text-cyan-400 text-xl" />
+                  <a href="tel:+918530019387" className="hover:underline">
+                    +91 8530019387
+                  </a>
+                </div>
+                <div className="flex items-center gap-3 text-gray-300">
+                  <MdLocationOn className="text-cyan-400 text-xl" />
+                  <span>Jalgaon, Maharashtra, India</span>
                 </div>
               </div>
 
-              {/* Social Icons */}
+              {/* Social */}
               <div className="pt-6">
-                <p className="mb-3 text-center text-gray-300 font-semibold">Connect with me</p>
+                <p className="mb-3 text-center text-gray-300 font-semibold">
+                  Connect with me
+                </p>
                 <div className="flex justify-center space-x-4 text-2xl">
                   {socialLinks.map(({ href, Icon, label, shadow, color }) => (
                     <motion.a
@@ -146,11 +142,9 @@ export default function Contact() {
                       aria-label={label}
                       whileHover={{ scale: 1.2 }}
                       whileTap={{ scale: 0.9 }}
-                      className={`
-                        p-2 rounded-full transition transform duration-300
+                      className={`p-2 rounded-full transition transform duration-300
                         animate-bounce-custom focus:outline-none focus:ring-2 focus:ring-cyan-400
-                        ${shadow} ${color}
-                      `}
+                        ${shadow} ${color}`}
                     >
                       <Icon />
                     </motion.a>
@@ -159,34 +153,42 @@ export default function Contact() {
               </div>
             </div>
           </div>
- 
+
           {/* RIGHT: Form */}
           <form
-            onSubmit={handleSubmit}
+            onSubmit={sendEmail}
             className="space-y-6 rounded-xl p-8 bg-gray-800 bg-opacity-50 backdrop-blur-md border border-cyan-600 shadow-[0_4px_30px_rgba(0,255,255,0.3)] hover:shadow-[0_0_40px_12px_rgba(0,255,255,0.7)] transition-shadow duration-500 h-full"
           >
             <div className="grid md:grid-cols-2 gap-4">
-              <Input name="name" placeholder="Your Name" value={formData.name} onChange={handleChange} />
-              <Input name="phone" placeholder="Phone Number" value={formData.phone} onChange={handleChange} />
+              <Input name="name" placeholder="Your Name" />
+              <Input name="phone" placeholder="Phone Number" />
             </div>
-            <Input name="email" placeholder="Email" value={formData.email} onChange={handleChange} />
-            <Input name="subject" placeholder="Subject" value={formData.subject} onChange={handleChange} />
-            <Textarea name="message" placeholder="Your Message" value={formData.message} onChange={handleChange} />
+            <Input name="email" placeholder="Email" type="email" />
+            <Input name="subject" placeholder="Subject" />
+            <Textarea name="message" placeholder="Your Message" />
 
             <button
               type="submit"
-              className="w-full bg-cyan-800 hover:bg-cyan-900 text-white font-semibold px-8 py-4 rounded-md shadow-lg transition-transform active:scale-95 focus:outline-none focus:ring-4 focus:ring-cyan-400"
+              className="w-full bg-cyan-800 hover:bg-cyan-900 text-white font-semibold px-8 py-4 rounded-md shadow-lg transition-transform active:scale-95 focus:outline-none focus:ring-4 focus:ring-cyan-400 cursor-pointer"
             >
               Send Message
             </button>
 
-            {success && <p className="text-green-400 font-semibold text-center">Message sent successfully!</p>}
-            {error && <p className="text-red-500 font-semibold text-center">Something went wrong. Please try again.</p>}
+            {success && (
+              <p className="text-green-400 font-semibold text-center">
+                Message sent successfully!
+              </p>
+            )}
+            {error && (
+              <p className="text-red-500 font-semibold text-center">
+                Something went wrong. Please try again.
+              </p>
+            )}
           </form>
         </div>
       </div>
 
-      {/* Bounce Animation CSS */}
+      {/* Bounce Animation */}
       <style>{`
         @keyframes bounce-custom {
           0%, 100% { transform: translateY(0); }
@@ -201,14 +203,12 @@ export default function Contact() {
 }
 
 // Reusable Input Component
-function Input({ name, placeholder, value, onChange }) {
+function Input({ name, placeholder, type = "text" }) {
   return (
     <input
       name={name}
-      type="text"
+      type={type}
       placeholder={placeholder}
-      value={value}
-      onChange={onChange}
       required
       className="w-full p-4 rounded-md bg-gray-900 border border-gray-700 text-gray-200 placeholder-gray-500 transition focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 hover:border-cyan-500 shadow-inner"
     />
@@ -216,13 +216,11 @@ function Input({ name, placeholder, value, onChange }) {
 }
 
 // Reusable Textarea Component
-function Textarea({ name, placeholder, value, onChange }) {
+function Textarea({ name, placeholder }) {
   return (
     <textarea
       name={name}
       placeholder={placeholder}
-      value={value}
-      onChange={onChange}
       required
       className="w-full p-4 h-32 rounded-md bg-gray-900 border border-gray-700 text-gray-200 placeholder-gray-500 transition focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 hover:border-cyan-500 shadow-inner resize-none"
     />
