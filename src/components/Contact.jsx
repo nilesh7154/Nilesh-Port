@@ -159,7 +159,7 @@ export default function Contact() {
               </div>
             </div>
           </div>
-
+ 
           {/* RIGHT: Form */}
           <form
             onSubmit={handleSubmit}
