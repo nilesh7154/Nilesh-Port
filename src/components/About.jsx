@@ -22,10 +22,11 @@ export default function About() {
         </h2>
 
         {/* Subtitle */}
-        <p className="text-center text-cyan-300 mb-12 max-w-xl mx-auto">
-          I'm a Computer Science student passionate about building beautiful & performant web applications.
-        </p>
-
+       <p className="text-center text-cyan-300 mb-12 max-w-2xl mx-auto">
+  Computer Science Engineering graduate passionate about Java Full Stack
+  Development and actively seeking entry-level software engineering
+  opportunities to build impactful, scalable applications.
+</p>
         {/* Main Layout: Text + Image */}
         <div className="grid md:grid-cols-2 gap-10 items-center">
           
@@ -33,37 +34,41 @@ export default function About() {
           <div className="space-y-6 bg-gray-800/50 backdrop-blur-md border border-cyan-600 rounded-xl p-8 shadow-[0_4px_30px_rgba(0,255,255,0.3)] hover:shadow-[0_0_40px_12px_rgba(0,255,255,0.7)] transition-shadow duration-500 animate-fadeInUp order-2 md:order-1">
             {/* Icon + Line Description Cards */}
             {[
-              {
-                icon: <FaUserGraduate className="text-cyan-400 text-xl mt-1" />,
-                text: `Hi, I'm `,
-                highlight: "Nilesh Rathod",
-                rest: ", a CSE student specializing in modern front-end and full-stack development.",
-              },
-              {
-                icon: <FaCode className="text-cyan-400 text-xl mt-1" />,
-                text: `I love building scalable UIs using React, Tailwind CSS, and JavaScript. I focus on performance, responsiveness, and accessibility.`,
-              },
-              {
-                icon: <FaRocket className="text-cyan-400 text-xl mt-1" />,
-                text: `I'm always learning, contributing to open-source, and aiming to deliver elegant solutions to real-world problems.`,
-              },
-              {
-                icon: <FaLightbulb className="text-cyan-400 text-xl mt-1" />,
-                text: `I value `,
-                highlight: "creativity, collaboration, and curiosity",
-                rest: ". I thrive in dynamic environments and enjoy turning ideas into impactful digital solutions.",
-              },
-              {
-                icon: <FaJava className="text-cyan-400 text-xl mt-1" />,
-                text: `Recently enhancing my skills in `,
-                highlight: "Core Java and OOPs",
-                rest: ". Also exploring servlet-based applications and backend integration.",
-              },
-              {
-                icon: <FaBullseye className="text-cyan-400 text-xl mt-1" />,
-                text: `My goal is to become a developer who not only writes efficient code but also delivers intuitive, enjoyable user experiences.`,
-              },
-            ].map((item, i) => (
+  {
+    icon: <FaUserGraduate className="text-cyan-400 text-xl mt-1" />,
+    text: `Hi, I'm `,
+    highlight: "Nilesh Rathod",
+    rest: ", a Computer Science Engineering graduate passionate about building modern, scalable, and user-friendly web applications.",
+  },
+  {
+    icon: <FaCode className="text-cyan-400 text-xl mt-1" />,
+    text: `Skilled in `,
+    highlight: "Java, Spring Boot, React.js, Tailwind CSS, JavaScript, and PostgreSQL",
+    rest: ". I enjoy developing responsive full-stack applications with clean and maintainable code.",
+  },
+  {
+    icon: <FaRocket className="text-cyan-400 text-xl mt-1" />,
+    text: `Built academic and personal projects using modern technologies while continuously improving my problem-solving and software development skills.`,
+  },
+  {
+    icon: <FaLightbulb className="text-cyan-400 text-xl mt-1" />,
+    text: `I value `,
+    highlight: "continuous learning, teamwork, and innovation",
+    rest: ". I enjoy collaborating with others and turning ideas into practical software solutions.",
+  },
+  {
+    icon: <FaJava className="text-cyan-400 text-xl mt-1" />,
+    text: `Hands-on experience with `,
+    highlight: "Spring Boot, REST APIs, Spring Security, JPA/Hibernate, React.js, and Git",
+    rest: ". Currently strengthening my knowledge of Java Full Stack Development.",
+  },
+  {
+    icon: <FaBullseye className="text-cyan-400 text-xl mt-1" />,
+    text: `Currently seeking `,
+    highlight: "entry-level Software Developer / Java Full Stack Developer opportunities",
+    rest: " where I can contribute, learn from experienced professionals, and grow as a software engineer.",
+  },
+].map((item, i) => (
               <div key={i} className="flex items-start gap-3">
                 {item.icon}
                 <p>
@@ -87,7 +92,7 @@ export default function About() {
 
               {/* Actual image (not blurred) */}
               <img
-                src="/Image/nil.jpg"
+                src="/Image/nileshpp.jpg"
                 alt="Nilesh Rathod"
                 className="w-full h-full object-cover rounded-xl"
               />
@@ -102,6 +107,7 @@ export default function About() {
                       "Full Stack Web Developer",
                       "React.js Developer",
                       "Frontend Enthusiast",
+                      "Full stack Java Developer",
                     ]}
                     typeSpeed={60}
                     backSpeed={40}
@@ -118,7 +124,7 @@ export default function About() {
 
             {/* Resume Download Button */}
             <a
-              href="/Image/Nilesh_Rathod_Resume.pdf"
+              href="/Image/Nilesh_Resume_final.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="mt-6 inline-block bg-cyan-800 hover:bg-cyan-900 text-white font-medium px-6 py-3 rounded-md shadow-lg transition-transform active:scale-95 focus:outline-none focus:ring-4 focus:ring-cyan-400"

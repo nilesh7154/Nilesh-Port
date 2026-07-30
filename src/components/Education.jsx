@@ -9,7 +9,7 @@ export default function Education() {
       Stream: "Computer Science Engg",
       institute: "Shri Jaykumar Rawal Institute Of Technology, Dondaicha",
       board: "KBC North Maharashtra University, Jalgaon",
-      score: "CGPA: 8.00 / 10.00",
+      score: "CGPA: 8.01 / 10.00",
       side: "left", // Position on timeline
     },
     {

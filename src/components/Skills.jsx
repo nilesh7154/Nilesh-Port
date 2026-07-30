@@ -29,47 +29,62 @@ const SKILL_CATEGORIES = [
       { name: "Java", iconUrl: ICONS.Java },
       { name: "Python", iconUrl: ICONS.Python },
       { name: "C", iconUrl: ICONS.C },
+      { name: "SQL", iconUrl: ICONS.MySQL },
+    ],
+  },
+   {
+    title: "🌐 Frontend Development",
+    skills: [
+      { name: "HTML5", iconUrl: ICONS.HTML },
+      { name: "CSS3", iconUrl: ICONS.CSS },
+      { name: "React.js", iconUrl: ICONS.Reactjs },
+      { name: "Tailwind CSS", iconUrl: ICONS.Tailwind },
+    ],
+  },
+
+   {
+    title: "⚙️ Backend Development",
+    skills: [
+      { name: "Spring Boot", iconUrl: ICONS.SpringBoot },
+      { name: "Spring MVC", iconUrl: ICONS.SpringBoot },
+      { name: "Spring Security", iconUrl: ICONS.SpringBoot },
+      { name: "Spring Data JPA", iconUrl: ICONS.SpringBoot },
+      { name: "REST APIs", iconUrl: ICONS.SpringBoot },
+      { name: "JWT Authentication", iconUrl: ICONS.SpringBoot },
+    ],
+  },
+  {
+    title: "🗄️ Database",
+    skills: [
+      { name: "PostgreSQL", iconUrl: ICONS.PostgreSQL },
       { name: "MySQL", iconUrl: ICONS.MySQL },
     ],
   },
-  {
-    title: "🌐 Web Development",
+   {
+    title: "🛠️ Tools",
     skills: [
-      { name: "HTML", iconUrl: ICONS.HTML },
-      { name: "CSS", iconUrl: ICONS.CSS },
-      { name: "JavaScript", iconUrl: ICONS.JavaScript },
-      { name: "React.js", iconUrl: ICONS.Reactjs },
-      { name: "Tailwind CSS", iconUrl: ICONS.Tailwind },
-    
-    ],
-  },
-  {
-    title: "📦 Libraries & 🛠️Tools",
-    skills: [
-      { name: "Redux", iconUrl: ICONS.Redux },
-      { name: "Axios", iconUrl: ICONS.Axios },
-      { name: "JSON", iconUrl: ICONS.JSON },
-      { name: "Git & GitHub", iconUrl: ICONS.GitHub },
+      { name: "Git", iconUrl: ICONS.Git },
+      { name: "GitHub", iconUrl: ICONS.GitHub },
       { name: "Postman", iconUrl: ICONS.Postman },
+      { name: "Maven", iconUrl: ICONS.Maven },
     ],
   },
-  
 ];
 
 // Soft skills (emoji only)
 const SOFT_SKILLS = [
-  { name: "Communication", icon: "💬" },
-  { name: "Leadership", icon: "🤝" },
-  { name: "Public Speaking", icon: "🎤" },
   { name: "Problem Solving", icon: "🧩" },
+  { name: "Communication", icon: "💬" },
+  { name: "Teamwork", icon: "🤝" },
+  { name: "Quick Learner", icon: "🚀" },
 ];
 
 // Personal interests (emoji only)
 const INTERESTS = [
-  { name: "Web Development", icon: "🕸️" },
-  { name: "Content Creation", icon: "✍️" },
-  { name: "Public Speaking", icon: "🗣️" },
-  { name: "Digital Marketing", icon: "💻" },
+  { name: "Full Stack Development", icon: "💻" },
+  { name: "Open Source", icon: "🌐" },
+  { name: "Problem Solving", icon: "🧠" },
+  { name: "Learning New Technologies", icon: "📚" },
 ];
 
 // Animation container for cards
@@ -102,11 +117,13 @@ export default function Skills() {
       </h2>
 
       {/* Intro paragraph */}
-      <p className="italic text-gray-300 leading-relaxed text-center mb-10">
-        I bring a perfect mix of design aesthetics and development logic. I care deeply about clean code,
-        fast load times, responsive layouts, and seamless user experiences. With a curious mind and solid understanding of modern tech,
-        I love building digital products that shine.
-      </p>
+     <p className="italic text-gray-300 leading-relaxed text-center mb-10 max-w-4xl mx-auto">
+  Passionate Java Full Stack Developer with hands-on experience in building
+  scalable web applications using Spring Boot, React.js, and PostgreSQL.
+  Strong foundation in RESTful APIs, secure authentication, responsive UI
+  development, and clean coding practices. Continuously learning modern
+  technologies to build efficient and user-friendly software solutions.
+</p>
 
       {/* Skills Grid */}
       <motion.div

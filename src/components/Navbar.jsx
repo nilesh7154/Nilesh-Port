@@ -76,7 +76,7 @@ export default function Navbar() {
         {/* Profile section */}
         <div className="text-center px-6">
           <img
-            src="/Image/nil2.jpg"
+            src="/Image/nileshp.jpg"
             alt="Nilesh Profile"
             className="w-48 h-64 rounded-[100px] mx-auto border-4 border-gray-700 object-cover glow-animation"
           />

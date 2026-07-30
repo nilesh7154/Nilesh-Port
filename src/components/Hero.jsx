@@ -60,6 +60,7 @@ export default function Hero() {
                   "Full Stack Web Developer",
                   "React.js Developer",
                   "Frontend Enthusiast",
+                  "Full Stack Java Developer"
                 ]}
                 typeSpeed={60}
                 backSpeed={40}
