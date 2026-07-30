@@ -93,7 +93,7 @@ export default function About() {
               {/* Actual image (not blurred) */}
               <img
                 src="/Image/nileshpp.jpg"
-                alt="Nilesh Rathod"
+                alt="Nilesh V Rathod"
                 className="w-full h-full object-cover rounded-xl"
               />
             </div>
