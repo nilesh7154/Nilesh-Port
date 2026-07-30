@@ -147,7 +147,7 @@ export default function Navbar() {
         <div className="text-center mt-16 px-6">
           <img
             src="/Image/nil2.jpg"
-            alt="Nilesh Profile"
+            alt="Nilesh Profiles"
             className="w-40 h-56 rounded-[80px] mx-auto border-4 border-gray-700 object-cover glow-animation"
           />
           <p className="text-lg font-semibold mt-4 select-text">Nilesh Rathod</p>
